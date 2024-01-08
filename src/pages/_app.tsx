@@ -1,8 +1,9 @@
 import "@mantine/core/styles.css";
 import "../styles/styles.css";
 import type { AppProps } from "next/app";
-import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import Head from "next/head";
+import Layout from "../components/layout";
 
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -21,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* <ColorSchemeScript /> */}
       </Head>
       <MantineProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </MantineProvider>
     </>
   );

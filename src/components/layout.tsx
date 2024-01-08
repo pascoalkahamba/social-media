@@ -1,11 +1,19 @@
 import { Box } from "@mantine/core";
 import React from "react";
+import HeaderMegaMenu from "./headerMegaMenu";
+import FooterCentered from "./footerCentered";
+import classes from "../styles/layout.module.css";
 
-export default function Layout() {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
-    <Box component="section">
-      <div>Image</div>
-      <div>Contents</div>
+    <Box component="section" className={classes.layout}>
+      <HeaderMegaMenu />
+      <div className={classes.contanier}>{children}</div>
+      <FooterCentered />
     </Box>
   );
 }
