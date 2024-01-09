@@ -32,7 +32,7 @@ export default function HeaderMegaMenu() {
   const { pathname } = useRouter();
 
   return (
-    <Box pb={120}>
+    <Box pb={70}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Image
@@ -55,7 +55,11 @@ export default function HeaderMegaMenu() {
             ))}
           </Group>
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
+            <Link href="/login">
+              <a href="">
+                <Button variant="default">Log in</Button>
+              </a>
+            </Link>
             <Button>Sign up</Button>
             <ColorShemes />
           </Group>

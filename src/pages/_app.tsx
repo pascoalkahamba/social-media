@@ -2,7 +2,11 @@ import "@mantine/core/styles.css";
 import "../styles/styles.css";
 import type { AppProps } from "next/app";
 import { MantineProvider, createTheme } from "@mantine/core";
+import { useEffect } from "react";
 import Head from "next/head";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Layout from "../components/layout";
 
 const theme = createTheme({
@@ -10,6 +14,10 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Head>
